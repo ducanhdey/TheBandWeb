@@ -1,50 +1,103 @@
-/* Reset CSS */
 * {
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
 }
 html {
   font-family: Arial, Helvetica, sans-serif;
 }
-/* Tu ngoai vao trong,, tu tren xuuong duuoi,tuu tong quan den chi tiet */
-/* 
-1. Vị trí
-2. Kích thước(width,height)
-3. Màu sắc
-4. Kiểu dáng (Kiểu chữ,Hình dạng,...)
-*/
-#app {
+#container {
+  height: 1000px;
+  background-color: #ccc;
 }
 
 #header {
-  height: 46px;
+  position: fixed;
+  z-index: 10;
   background-color: black;
+  height: 46px;
+  top: 0;
+  left: 0;
+  right: 0;
 }
-#nav {
-}
-#nav li {
+#nav,
+.subnav {
+  list-style: none;
   display: inline-block;
 }
-#nav li a {
-  color: white;
-  text-decoration: none;
+#nav > li {
+  display: inline-block;
+  position: relative;
+}
+#nav > li > a {
   line-height: 46px;
-  padding: 0 24px;
-  display: block;
+  color: rgb(255, 255, 255);
   text-transform: uppercase;
 }
-#nav li:hover a {
-  background-color: rgb(202, 199, 199);
+#nav li a {
+  text-decoration: none;
+  padding: 0 24px;
+  display: inline-block;
+}
+#nav > li:hover > a,
+#nav .subnav li:hover {
+  background-color: rgb(173, 171, 171);
   color: black;
+}
+#nav li:hover .subnav {
+  display: block;
 }
 #nav .subnav {
   display: none;
+  top: 100%;
+  min-width: 160px;
+  position: absolute;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
+#nav .subnav a {
+  color: black;
+  padding: 0 12px;
+  line-height: 38px;
+}
+/* End header */
+/* Begin slider */
 #slider {
+  position: relative;
+  margin-top: 46px;
+  padding-top: 50%;
+  background: url("../img/slider/slider1.jpg") top center / cover no-repeat;
 }
-
+#slider .text-content {
+  bottom: 48px;
+  position: absolute;
+  color: #fff;
+  font-size: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+#slider .text-heading {
+}
+#slider .text-description {
+}
+/* End slider */
+#nav .nav-arrow-down {
+  font-size: 14px;
+}
+#header .search-button {
+  float: right;
+  padding: 0 24px;
+}
+#header .search-button:hover {
+  background-color: #f44336;
+  cursor: pointer;
+}
+#header .search-icon {
+  line-height: 46px;
+  color: #ffffff;
+  font-size: 14px;
+}
 #content {
 }
 
